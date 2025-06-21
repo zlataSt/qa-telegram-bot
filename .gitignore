@@ -8,7 +8,6 @@ __pycache__/
 
 *.docx
 *.pdf
-*.py
 *.java
 
 session_cache.json
