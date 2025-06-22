@@ -29,6 +29,8 @@ def save_to_pdf(text: str, name: str) -> str:
     pdf.set_auto_page_break(auto=True, margin=15)
     font_path_regular = os.path.join("fonts", "DejaVuSans.ttf")
     font_path_bold = os.path.join("fonts", "DejaVuSans-Bold.ttf")
+    if not os.path.exists(font_path_regular) or not os.path.exists(font_path_bold):
+        raise FileNotFoundError(f"Font files not found! Searched for '{font_path_regular}' and '{font_path_bold}'")
     pdf.add_font("DejaVu", "", font_path_regular, uni=True)
     pdf.add_font("DejaVu", "B", font_path_bold, uni=True)
     pdf.set_font("DejaVu", size=11)
